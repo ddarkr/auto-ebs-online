@@ -1,0 +1,9 @@
+{
+  "name": "auto-ebs-online",
+  "version": "1.0.0",
+  "description": "EBS를 자동으로!",
+  "private": true,
+  "dependencies": {
+    "typescript": "^3.9.5"
+  }
+}
