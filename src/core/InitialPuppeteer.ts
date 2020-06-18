@@ -1,5 +1,6 @@
 import puppeteer from 'puppeteer';
 import URL from './getUrl';
+import config from './config';
 
 interface InitialType {
   browser: puppeteer.Browser;
@@ -18,7 +19,7 @@ const InitialPuppeteer = async (): Promise<InitialType> => {
   await page.goto(
     URL +
       '/onlineClass/search/onlineClassSearchView.do?schulCcode=' +
-      process.env.SCODE +
+      config('ebs_scode') +
       '&schCssTyp=online_high',
     {
       waitUntil: 'networkidle2',
