@@ -1,3 +1,6 @@
+import dotenv from 'dotenv';
+dotenv.config();
+
 /**
  * EBS 온라인 클래스의 주소를 반환합니다. 주소의 끝에는 `/`이 포함되지 않습니다.
  *
