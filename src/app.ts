@@ -7,6 +7,7 @@
 import dotenv from 'dotenv';
 import InitialPuppeteer from './core/InitialPuppeteer';
 import checkNeedEnviroment from './core/checkNeedEnviroment';
+import LoginToSession from './features/class-login';
 
 // parse .env
 dotenv.config();
@@ -15,6 +16,8 @@ dotenv.config();
 if (checkNeedEnviroment()) {
   (async () => {
     const session = await InitialPuppeteer();
+
+    await LoginToSession(session.page);
 
     // 세션 종료 (개발 시에는 주석 처리해놔)
     // await session.browser.close();
