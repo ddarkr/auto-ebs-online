@@ -4,13 +4,9 @@
  * 자동으로 EBS 온라인 클래스를 수강합니다.
  */
 
-import dotenv from 'dotenv';
 import InitialPuppeteer from './core/InitialPuppeteer';
 import checkNeedEnviroment from './core/checkNeedEnviroment';
 import LoginToSession from './features/class-login';
-
-// parse .env
-dotenv.config();
 
 // 환경 변수 존재하는지 확인
 if (checkNeedEnviroment()) {
