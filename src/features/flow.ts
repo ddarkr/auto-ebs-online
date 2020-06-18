@@ -26,7 +26,6 @@ const taskFlow = async (): Promise<void> => {
 
         console.log('[task-flow] 작업 종료.');
 
-        // 세션 종료 (개발 시에는 주석 처리해놔)
         await session.browser.close();
 
         resolve();
