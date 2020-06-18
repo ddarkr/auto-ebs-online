@@ -3,8 +3,11 @@
   "version": "1.0.0",
   "description": "EBS를 자동으로!",
   "private": true,
-  "dependencies": {},
+  "dependencies": {
+    "puppeteer": "^4.0.0"
+  },
   "devDependencies": {
+    "@types/puppeteer": "^3.0.0",
     "@typescript-eslint/eslint-plugin": "^3.3.0",
     "@typescript-eslint/parser": "^3.3.0",
     "eslint": "^7.2.0",
