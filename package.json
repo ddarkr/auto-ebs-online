@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "EBS를 자동으로!",
   "private": true,
+  "scripts": {
+    "app": "ts-node src/app.ts"
+  },
   "dependencies": {
     "dotenv": "^8.2.0",
     "puppeteer": "^4.0.0"
