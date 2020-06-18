@@ -4,17 +4,16 @@
  * 자동으로 EBS 온라인 클래스를 수강합니다.
  */
 
-import puppeteer from 'puppeteer';
 import dotenv from 'dotenv';
+import InitialPuppeteer from 'core/InitialPuppeteer';
 
 // parse .env
 dotenv.config();
 
 (async () => {
-  const browser = await puppeteer.launch();
-  const page = await browser.newPage();
-  await page.goto('https://example.com');
-  await page.screenshot({ path: 'example.png' });
+  const session = await InitialPuppeteer();
+  await session.page.goto('https://example.com');
+  await session.page.screenshot({ path: 'example.png' });
 
-  await browser.close();
+  await session.browser.close();
 })();
