@@ -5,6 +5,10 @@
  */
 
 import puppeteer from 'puppeteer';
+import dotenv from 'dotenv';
+
+// parse .env
+dotenv.config();
 
 (async () => {
   const browser = await puppeteer.launch();
