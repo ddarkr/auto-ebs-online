@@ -6,14 +6,18 @@
 
 import dotenv from 'dotenv';
 import InitialPuppeteer from 'core/InitialPuppeteer';
+import checkNeedEnviroment from 'core/checkNeedEnviroment';
 
 // parse .env
 dotenv.config();
 
-(async () => {
-  const session = await InitialPuppeteer();
-  await session.page.goto('https://example.com');
-  await session.page.screenshot({ path: 'example.png' });
+// 환경 변수 존재하는지 확인
+if (checkNeedEnviroment()) {
+  (async () => {
+    const session = await InitialPuppeteer();
 
-  await session.browser.close();
-})();
+    await session.page.goto('https://example.com');
+
+    await session.browser.close();
+  })();
+}
