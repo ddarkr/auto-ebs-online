@@ -8,7 +8,11 @@ const LoginToSession = async (page: puppeteer.Page): Promise<void> => {
   try {
     await page.goto(URL + '/sso/loginView.do?loginType=onlineClass', {
       waitUntil: 'networkidle2',
-    }); // 페이지 이동 / 페이지 로딩이 완료될 때까지 대기.
+    });
+
+    console.log(
+      '[로그인] ' + process.env.EBS_ID + ' / ' + process.env.EBS_PW + ' 계정으로 로그인합니다.',
+    );
 
     await page.type('#j_username', process.env.EBS_ID || '');
     await page.type('#j_password', process.env.EBS_PW || '');

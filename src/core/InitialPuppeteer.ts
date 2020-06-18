@@ -13,7 +13,7 @@ interface InitialType {
 const InitialPuppeteer = async (): Promise<InitialType> => {
   const browser = await puppeteer.launch({
     headless: false,
-    executablePath: 'C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe',
+    executablePath: 'C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe',
   });
   const page = await browser.newPage();
   await page.setViewport({ width: 1366, height: 768 }); // 조금 더 큰 화면에서 작업하자
