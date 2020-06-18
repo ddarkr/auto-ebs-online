@@ -20,6 +20,7 @@
 ### .env
 
 ```
+BROWSER_PATH=C:\Browser\Path\chrome.exe
 EBS_SCODE=00000
 EBS_URL=hoc00.ebssw.kr
 EBS_ID=username
