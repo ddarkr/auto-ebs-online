@@ -5,8 +5,8 @@
  */
 
 import dotenv from 'dotenv';
-import InitialPuppeteer from 'core/InitialPuppeteer';
-import checkNeedEnviroment from 'core/checkNeedEnviroment';
+import InitialPuppeteer from './core/InitialPuppeteer';
+import checkNeedEnviroment from './core/checkNeedEnviroment';
 
 // parse .env
 dotenv.config();
@@ -16,8 +16,7 @@ if (checkNeedEnviroment()) {
   (async () => {
     const session = await InitialPuppeteer();
 
-    await session.page.goto('https://example.com');
-
-    await session.browser.close();
+    // 세션 종료 (개발 시에는 주석 처리해놔)
+    // await session.browser.close();
   })();
 }

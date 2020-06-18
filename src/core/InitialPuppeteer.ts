@@ -9,7 +9,10 @@ interface InitialType {
  * Start Puppeteer session. await 사용바람.
  */
 const InitialPuppeteer = async (): Promise<InitialType> => {
-  const browser = await puppeteer.launch();
+  const browser = await puppeteer.launch({
+    headless: false,
+    executablePath: 'C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe',
+  });
   const page = await browser.newPage();
   return { browser, page };
 };
