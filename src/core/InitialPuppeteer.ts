@@ -16,7 +16,10 @@ const InitialPuppeteer = async (): Promise<InitialType> => {
   });
   const page = await browser.newPage();
   await page.goto(
-    URL + '/onlineClass/search/onlineClassSearchView.do?schulCcode=00150&schCssTyp=online_high',
+    URL +
+      '/onlineClass/search/onlineClassSearchView.do?schulCcode=' +
+      process.env.SCODE +
+      '&schCssTyp=online_high',
     {
       waitUntil: 'networkidle2',
     },
