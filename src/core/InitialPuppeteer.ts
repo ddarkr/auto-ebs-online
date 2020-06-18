@@ -18,6 +18,8 @@ const InitialPuppeteer = async (): Promise<InitialType> => {
   });
   const page = await browser.newPage();
   await page.setViewport({ width: 1366, height: 768 }); // 조금 더 큰 화면에서 작업하자
+
+  // 세션 시작 목적 (아무 페이지나 접속.)
   await page.goto(
     URL +
       '/onlineClass/search/onlineClassSearchView.do?schulCcode=' +
