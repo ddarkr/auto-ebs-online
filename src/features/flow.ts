@@ -3,7 +3,7 @@ import InitialPuppeteer from '../core/InitialPuppeteer';
 import LoginToSession from './class-login';
 import videoWatch from './video-watch';
 
-const taskFlow = async (): Promise<void> => {
+const taskFlow = async (video: string): Promise<void> => {
   return new Promise((resolve, reject) => {
     (async () => {
       try {
@@ -19,10 +19,7 @@ const taskFlow = async (): Promise<void> => {
         await session.page.waitFor(2000);
 
         console.log('[task-flow] videoWatch');
-        await videoWatch(
-          session.page,
-          'https://hoc19.ebssw.kr/mypage/userlrn/userLrnView.do?atnlcNo=788879&stepSn=154151&lctreSn=5454936&onlineClassYn=Y',
-        );
+        await videoWatch(session.page, video);
 
         console.log('[task-flow] 작업 종료.');
 
