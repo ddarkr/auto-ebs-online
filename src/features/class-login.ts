@@ -10,6 +10,8 @@ const LoginToSession = async (page: puppeteer.Page): Promise<void> => {
       waitUntil: 'networkidle2',
     }); // 페이지 이동 / 페이지 로딩이 완료될 때까지 대기.
 
+    await page.waitForNavigation();
+
     await page.type('#j_username', process.env.EBS_ID || '');
     await page.type('#j_password', process.env.EBS_PW || '');
 
