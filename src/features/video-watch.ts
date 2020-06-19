@@ -51,6 +51,7 @@ const videoWatch = async (page: puppeteer.Page, video: string): Promise<void> =>
         await page.click('#playerEl > .vjs-big-play-button');
       } catch (e) {
         console.log(e);
+        reject();
       }
     };
     action(); // 상단 스크립트 실행.
