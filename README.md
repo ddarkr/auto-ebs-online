@@ -17,7 +17,7 @@
   - 일부 오픈소스 Chromium 브라우저는 MP4 등의 유료 포맷이 지원되지 않아 영상 재생이 안될 수 있습니다.
   - 테스트 환경은 크로뮴 Edge로 진행되었습니다.
 
-### .env
+### `.env`
 
 ```
 BROWSER_PATH=C:\Browser\Path\chrome.exe
@@ -25,6 +25,18 @@ EBS_SCODE=00000
 EBS_URL=hoc00.ebssw.kr
 EBS_ID=username
 EBS_PW=password
+```
+
+### `videoList.txt`
+
+- 한 줄에 한 링크를 입력하시면 됩니다.
+- 파일 인코딩은 `UTF-8`을 권장드립니다.
+- 해당 파일이 존재하지 않을 경우, 자동으로 파일을 생성합니다.
+
+### Work!
+
+```shell
+yarn app
 ```
 
 ## others
