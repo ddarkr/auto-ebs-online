@@ -35,6 +35,14 @@ EBS_PW=password
 
 ### Work!
 
+Install dependencies:
+
+```shell
+yarn install
+```
+
+Run script:
+
 ```shell
 yarn app
 ```
