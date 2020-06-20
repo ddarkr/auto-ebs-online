@@ -9,16 +9,20 @@ import readVideoList from './core/readVideolist';
 import checkNeedEnviroment from './core/checkNeedEnviroment';
 import taskFlow from './features/flow';
 
-const videoList: Array<string> = [
-  'https://hoc19.ebssw.kr/mypage/userlrn/userLrnView.do?atnlcNo=788879&stepSn=154151&lctreSn=5454939&onlineClassYn=Y',
-  'https://hoc19.ebssw.kr/mypage/userlrn/userLrnView.do?atnlcNo=780315&stepSn=171164&lctreSn=6075903&onlineClassYn=Y',
-];
-
 // 환경 변수 존재하는지 확인
 if (checkNeedEnviroment()) {
   (async () => {
-    for (let i = 0; i < videoList.length; i++) {
-      await taskFlow(videoList[i]);
+    const videoList = await readVideoList();
+    if (videoList !== undefined) {
+      for (let i = 0; i < videoList.length; i++) {
+        await taskFlow(videoList[i]);
+      }
+    } else {
+      console.log('[■] videoList.txt 파일이 존재하지 않습니다.');
+      console.log('    파일을 생성하였습니다.');
+      console.log('       ');
+      console.log('    한 줄마다 한 개의 영상 주소를 입력하시기 바랍니다.');
+      process.exit(1);
     }
   })();
 } else {
