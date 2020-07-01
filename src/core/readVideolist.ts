@@ -13,7 +13,10 @@ const fileExists = async (path: string) => !!(await fs.promises.stat(path).catch
 const readVideolistFile = async (): Promise<Array<string> | undefined> => {
   if (await fileExists(fileLocation)) {
     const article = fs.readFileSync(fileLocation);
-    return article.toString().split('\n');
+    return article
+      .toString()
+      .replace(/(?:\\[r]|[\r]+)+/g, '')
+      .split('\n');
   } else {
     const text = '';
     fs.writeFileSync(fileLocation, '\ufeff' + text, { encoding: 'utf8' });
