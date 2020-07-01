@@ -16,7 +16,7 @@ if (checkNeedEnviroment()) {
     console.log(videoList);
     if (videoList !== undefined) {
       for (let i = 0; i < videoList.length; i++) {
-        await taskFlow(videoList[i].replace(/(?:\\[rn])+/g, ''));
+        await taskFlow(videoList[i].trim());
       }
     } else {
       console.log('[■] videoList.txt 파일이 존재하지 않습니다.');
