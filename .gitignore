@@ -4,3 +4,6 @@ node_modules
 
 # .env (persional private)
 .env
+
+# videoList
+videoList*
