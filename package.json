@@ -4,7 +4,8 @@
   "description": "EBS를 자동으로!",
   "private": true,
   "scripts": {
-    "app": "ts-node src/app.ts"
+    "app": "ts-node src/app.ts",
+    "one": "ts-node src/one.ts"
   },
   "dependencies": {
     "dotenv": "^8.2.0",
